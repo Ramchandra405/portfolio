@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chinthapalli Siva — Full Stack Web Developer</title>
+<meta name="description" content="Portfolio of Chinthapalli Siva, an aspiring full stack web developer studying B.Tech CSE at Lovely Professional University." />
+<link rel="canonical" href="https://your-domain.vercel.app/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Chinthapalli Siva — Full Stack Web Developer" />
+<meta property="og:description" content="Portfolio of Chinthapalli Siva, an aspiring full stack web developer studying B.Tech CSE at Lovely Professional University." />
+<meta property="og:image" content="assets/images/og-cover.png" />
+<meta property="og:url" content="https://your-domain.vercel.app/" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chinthapalli Siva — Full Stack Web Developer" />
+<meta name="twitter:description" content="Portfolio of Chinthapalli Siva, an aspiring full stack web developer." />
+<meta name="twitter:image" content="assets/images/og-cover.png" />
+
+<link rel="icon" href="assets/images/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Chinthapalli Siva",
+  "jobTitle": "Aspiring Full Stack Web Developer",
+  "url": "https://your-domain.vercel.app/",
+  "sameAs": [
+    "https://github.com/your-username",
+    "https://linkedin.com/in/your-username",
+    "https://leetcode.com/your-username",
+    "https://x.com/your-username"
+  ],
+  "alumniOf": "Lovely Professional University"
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- Mobile top bar -->
+<div class="topbar">
+  <div class="topbar__brand">siva<span>.dev</span></div>
+  <button class="topbar__menu-btn" id="mobileMenuBtn" aria-label="Open navigation" aria-expanded="false">☰ Menu</button>
+</div>
+
+<!-- Sidebar / file-tree nav -->
+<nav class="sidenav" id="sidenav" aria-label="Primary">
+  <div class="sidenav__brand">siva<span>.dev</span></div>
+  <ul class="sidenav__tree" id="sidenavTree">
+    <li><a href="#hero" class="active">📄 about</a></li>
+    <li><a href="#tech-orbit">🪐 tech-orbit</a></li>
+    <li><a href="#projects">🗂 projects</a></li>
+    <li><a href="#skills">🛠 skills</a></li>
+    <li><a href="#certificates">🎓 certificates</a></li>
+    <li><a href="#experience">💼 experience</a></li>
+    <li><a href="#contact">✉️ contact</a></li>
+  </ul>
+  <div class="sidenav__actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+      <span id="themeToggleLabel">🌙 Dark mode</span>
+    </button>
+    <a class="btn btn--primary" id="downloadResumeBtn" href="public/resume.pdf" download data-track="resume-download">
+      ⬇ Download Resume
+    </a>
+    <a class="btn" id="viewResumeBtn" href="public/resume.pdf" target="_blank" rel="noopener noreferrer" data-track="resume-view">
+      👁 View Resume
+    </a>
+    <button class="btn" id="shareBtn" data-track="share-click">🔗 Share Portfolio</button>
+  </div>
+</nav>
+
+<main id="main-content">
+  <!-- HERO -->
+  <section class="hero" id="hero" style="border-top:none;">
+    <canvas id="heroParticles" class="hero__particles" aria-hidden="true"></canvas>
+    <div class="container hero__grid">
+      <div class="hero__text reveal">
+        <div class="editor" id="heroEditor">
+          <div class="editor__tabbar">
+            <span class="editor__dot editor__dot--red"></span>
+            <span class="editor__dot editor__dot--yellow"></span>
+            <span class="editor__dot editor__dot--green"></span>
+            <span class="editor__tab">portfolio.tsx</span>
+          </div>
+          <div class="editor__body">
+            <div class="editor__line"><span class="editor__line-num">1</span><span class="editor__code"><span class="kw">const</span> <span class="fn">developer</span> = {</span></div>
+            <div class="editor__line"><span class="editor__line-num">2</span><span class="editor__code">&nbsp;&nbsp;name: <span class="str" id="heroName" data-typewriter></span>,</span></div>
+            <div class="editor__line"><span class="editor__line-num">3</span><span class="editor__code">&nbsp;&nbsp;role: <span class="str" id="heroRoleLine" data-typewriter></span>,</span></div>
+            <div class="editor__line"><span class="editor__line-num">4</span><span class="editor__code">&nbsp;&nbsp;status: <span class="str typing-cursor" id="heroStatusLine" data-typewriter>"open to opportunities"</span></span></div>
+            <div class="editor__line"><span class="editor__line-num">5</span><span class="editor__code">};</span></div>
+          </div>
+        </div>
+
+        <h1 class="hero__name" id="heroDisplayName"></h1>
+        <p class="hero__role"><span class="eyebrow">Role</span> — <span id="heroRole"></span></p>
+        <p class="hero__tagline" id="heroTagline"></p>
+
+        <div class="hero__ctas">
+          <a class="btn btn--primary magnetic" href="#projects">View Projects</a>
+          <a class="btn magnetic" id="heroLinkedinBtn" href="#" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="btn magnetic" id="heroGithubBtn" href="#" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+        </div>
+      </div>
+
+      <div class="hero__photo-wrap reveal" style="transition-delay: 120ms;">
+        <div class="hero__photo-glow"></div>
+        <div class="hero__photo-tilt" id="heroPhotoTilt">
+          <img id="heroPhoto" src="assets/images/profile.png" alt="Portrait" class="hero__photo"
+               onerror="this.onerror=null; this.src='assets/images/profile-placeholder.png';" />
+        </div>
+        <div class="hero__photo-badge">🟢 Open to opportunities</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH ORBIT (real Three.js) -->
+  <section id="tech-orbit">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Interactive · WebGL</span>
+        <h2 class="section__title">Tech Stack Orbit</h2>
+        <p style="color:var(--text-muted); margin-top:8px;">Drag to rotate. Hover a sphere for skill level. Click for details.</p>
+      </div>
+      <div class="orbit-stage reveal" id="orbitStage">
+        <canvas id="orbitCanvas"></canvas>
+        <div class="orbit-tooltip" id="orbitTooltip" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech detail modal -->
+  <div class="modal" id="techModal">
+    <div class="modal__panel">
+      <button class="lightbox__close" id="techModalClose" aria-label="Close">✕</button>
+      <span class="eyebrow" id="techModalEyebrow">Technology</span>
+      <h3 class="section__title" id="techModalName" style="margin-top:6px;"></h3>
+      <div class="modal__bar"><div class="modal__bar-fill" id="techModalBar"></div></div>
+      <p id="techModalLevel" style="color:var(--text-muted); font-family:var(--font-mono); font-size:0.85rem;"></p>
+      <p id="techModalProjects" style="margin-top:14px;"></p>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Selected Work</span>
+        <h2 class="section__title">Projects</h2>
+      </div>
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Toolbox</span>
+        <h2 class="section__title">Skills</h2>
+        <p style="color:var(--text-muted); margin-top:8px;">Hover to pause the ring and inspect a skill.</p>
+      </div>
+      <div class="skills-orbit-stage reveal" id="skillsOrbitStage">
+        <div class="skills-orbit" id="skillsOrbit"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="eyebrow">Proof of Learning</span>
+        <h2 class="section__title">Certificates</h2>
+      </div>
+      <div class="cert-grid reveal" id="certGrid"></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Track Record</span>
+        <h2 class="section__title">Experience & Certificates</h2>
+      </div>
+      <div id="experienceList"></div>
+      <div id="educationList" style="margin-top:24px;"></div>
+      <div id="certificatesList" style="margin-top:24px;"></div>
+      <div id="achievementsList" style="margin-top:24px;"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Say Hello</span>
+        <h2 class="section__title">Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <form id="contactForm" novalidate aria-describedby="formStatus">
+          <div class="form-field">
+            <label for="fieldName">Name</label>
+            <input type="text" id="fieldName" name="name" maxlength="80" required aria-required="true" />
+            <div class="form-field__error" id="errName"></div>
+          </div>
+          <div class="form-field">
+            <label for="fieldEmail">Email</label>
+            <input type="email" id="fieldEmail" name="email" maxlength="120" required aria-required="true" />
+            <div class="form-field__error" id="errEmail"></div>
+          </div>
+          <div class="form-field">
+            <label for="fieldSubject">Subject</label>
+            <input type="text" id="fieldSubject" name="subject" maxlength="150" required aria-required="true" />
+            <div class="form-field__error" id="errSubject"></div>
+          </div>
+          <div class="form-field">
+            <label for="fieldMessage">Message</label>
+            <textarea id="fieldMessage" name="message" maxlength="1000" required aria-required="true"></textarea>
+            <div class="char-count"><span id="msgCharCount">0</span>/1000</div>
+            <div class="form-field__error" id="errMessage"></div>
+          </div>
+
+          <!-- Honeypot field for basic spam prevention -->
+          <div style="position:absolute; left:-9999px;" aria-hidden="true">
+            <label for="companyWebsite">Leave blank</label>
+            <input type="text" id="companyWebsite" name="companyWebsite" tabindex="-1" autocomplete="off" />
+          </div>
+
+          <button type="submit" class="btn btn--primary" id="submitBtn">Send Message</button>
+
+          <div class="form-status" id="formStatus" role="status"></div>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-row">
+            <span class="contact-row__link" id="emailDisplay"></span>
+            <div style="display:flex; gap:8px;">
+              <button class="icon-btn" id="copyEmailBtn" aria-label="Copy email address">⧉</button>
+              <a class="icon-btn" id="mailtoLink" href="#" aria-label="Email me">✉</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row__link" id="phoneDisplay"></span>
+            <a class="icon-btn" id="telLink" href="#" aria-label="Call me">☎</a>
+          </div>
+
+          <span class="eyebrow" style="margin-top:10px;">Based in</span>
+          <div class="map-embed">
+            <iframe title="Location map" id="mapEmbed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="container">
+  <span id="footerName"></span>
+  <div class="footer__socials" id="footerSocials"></div>
+</footer>
+
+<!-- Lightbox for project image preview -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox__close" id="lightboxClose" aria-label="Close preview">✕</button>
+  <img id="lightboxImg" src="" alt="" />
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- Config first, then EmailJS SDK, then Three.js, then app logic -->
+<script src="config/personal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/interactions.js"></script>
+
+</body>
+</html>
